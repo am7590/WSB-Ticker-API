@@ -4,7 +4,6 @@ from scrape_hot_posts import *
 from scrape_24h_posts import *
 from scrape_new_posts import *
 
-
 app = Flask(__name__)
 
 
@@ -18,33 +17,35 @@ def home_page():
 
 
 # Hot Posts GET call
-# Ex. Get 100 hottest posts: ...:7777/hot/?hot=100/
+# Ex. Get 100 hottest posts: /hot/?hot=100/
 @app.route('/hot/', methods=['GET'])
 def hot_posts():
     user_query = int(request.args.get('hot'))
 
     h_posts = scrape_hot_posts(user_query, 'wallstreetbets')
-    data_set = {'Type of post': 'Hot', 'Number of posts scraped': user_query, 'Content': h_posts, 'Timestamp': time.time()}
+    data_set = {'Type of post': 'Hot', 'Number of posts scraped': user_query, 'Content': h_posts,
+                'Timestamp': time.time()}
     json_dump = json.dumps(data_set)
 
     return json_dump
 
 
 # New Posts GET
-# Ex. Get 100 newest posts: ...:7777/new/?new=100/
+# Ex. Get 100 newest posts: /new/?new=100/
 @app.route('/new/', methods=['GET'])
 def new_posts():
     user_query = int(request.args.get('new'))
 
     h_posts = scrape_new_posts(user_query, 'wallstreetbets')
-    data_set = {'Type of post': 'New', 'Number of posts scraped': user_query, 'Content': h_posts, 'Timestamp': time.time()}
+    data_set = {'Type of post': 'New', 'Number of posts scraped': user_query, 'Content': h_posts,
+                'Timestamp': time.time()}
     json_dump = json.dumps(data_set)
 
     return json_dump
 
 
 # 24h Posts GET
-# Ex. See frequencies from last 24 hours: ...:7777/24h/
+# Ex. See frequencies from last 24 hours: /24h/
 @app.route('/24h/', methods=['GET'])
 def get_h_posts():
     h_posts = scrape_24h_posts('wallstreetbets')
@@ -57,3 +58,8 @@ def get_h_posts():
 # Run API
 if __name__ == '__main__':
     app.run(port=7777)
+
+# Run API on ngrok:
+# ngrok authtoken 22yexawyqxMn2soyjGN8WKJnW5C_5RYN7PvGcyPVuFMFbmzzx
+# ngrok http 7777
+
