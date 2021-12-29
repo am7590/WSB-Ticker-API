@@ -26,7 +26,6 @@ def list_tickers(ticker_df, word_df, posts_scraped):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
 
-    #with open("output.txt", "a") as a_file:
     string += str(new_line)
     string += "\n\n"
 

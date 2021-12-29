@@ -1,0 +1,408 @@
+WSB Ticker Frequency from the newest 50 posts: 03:43:28
+Term  Frequency
+ SCI         11
+  SP         10
+ AMC          9
+TSLA          9
+HIMX          4
+ AMD          3
+VIAC          3
+ MAX          3
+ RSI          2
+  TA          2
+ WTI          2
+  DD          2
+   E          2
+  GM          2
+  ML          2
+   M          2
+AAPL          1
+TRUE          1
+PLTR          1
+   X          1
+ USA          1
+  ME          1
+NVDA          1
+ NOG          1
+MRNA          1
+ ALL          1
+HOOD          1
+ HAS          1
+ GME          1
+ CAC          1
+ATVI          1
+AMAT          1
+ YOU          1
+
+WSB Ticker Frequency from posts made in the last 24 hours: 03:43:50
+Term  Frequency
+  SP         21
+TSLA         16
+ SCI         11
+ AMC          9
+KNBE          7
+HIMX          6
+ AMD          5
+   D          5
+  DD          5
+AFRM          5
+AAPL          3
+ WTI          3
+VIAC          3
+ RSI          3
+   M          3
+ KSS          3
+ MAX          3
+   E          3
+ GME          2
+NVDA          2
+  TA          2
+   U          2
+  ML          2
+ USA          2
+  GM          2
+VRAR          1
+AMAT          1
+   W          1
+CROX          1
+ ALL          1
+   X          1
+ATVI          1
+TRUE          1
+ THC          1
+   Y          1
+ CAC          1
+  SI          1
+PLTR          1
+DIDI          1
+ HAS          1
+ NOG          1
+ NIO          1
+ NEW          1
+MSFT          1
+MRNA          1
+  ME          1
+   F          1
+  LC          1
+  FB          1
+   G          1
+INTC          1
+HOOD          1
+ YOU          1
+
+WSB Ticker Frequency from posts made in the last 24 hours: 03:44:14
+Term  Frequency
+  SP         21
+TSLA         16
+ SCI         11
+ AMC          9
+KNBE          7
+HIMX          6
+ AMD          5
+   D          5
+  DD          5
+AFRM          5
+AAPL          3
+ WTI          3
+VIAC          3
+ RSI          3
+   M          3
+ KSS          3
+ MAX          3
+   E          3
+ GME          2
+NVDA          2
+  TA          2
+   U          2
+  ML          2
+ USA          2
+  GM          2
+VRAR          1
+AMAT          1
+   W          1
+CROX          1
+ ALL          1
+   X          1
+ATVI          1
+TRUE          1
+ THC          1
+   Y          1
+ CAC          1
+  SI          1
+PLTR          1
+DIDI          1
+ HAS          1
+ NOG          1
+ NIO          1
+ NEW          1
+MSFT          1
+MRNA          1
+  ME          1
+   F          1
+  LC          1
+  FB          1
+   G          1
+INTC          1
+HOOD          1
+ YOU          1
+
+WSB Ticker Frequency from posts made in the last 24 hours: 03:44:25
+Term  Frequency
+  SP         21
+TSLA         16
+ SCI         11
+ AMC          9
+KNBE          7
+HIMX          6
+ AMD          5
+   D          5
+  DD          5
+AFRM          5
+AAPL          3
+ WTI          3
+VIAC          3
+ RSI          3
+   M          3
+ KSS          3
+ MAX          3
+   E          3
+ GME          2
+NVDA          2
+  TA          2
+   U          2
+  ML          2
+ USA          2
+  GM          2
+VRAR          1
+AMAT          1
+   W          1
+CROX          1
+ ALL          1
+   X          1
+ATVI          1
+TRUE          1
+ THC          1
+   Y          1
+ CAC          1
+  SI          1
+PLTR          1
+DIDI          1
+ HAS          1
+ NOG          1
+ NIO          1
+ NEW          1
+MSFT          1
+MRNA          1
+  ME          1
+   F          1
+  LC          1
+  FB          1
+   G          1
+INTC          1
+HOOD          1
+ YOU          1
+
+WSB Ticker Frequency from posts made in the last 24 hours: 03:44:49
+Term  Frequency
+  SP         21
+TSLA         16
+ SCI         11
+ AMC          9
+KNBE          7
+HIMX          6
+ AMD          5
+   D          5
+  DD          5
+AFRM          5
+AAPL          3
+ WTI          3
+VIAC          3
+ RSI          3
+   M          3
+ KSS          3
+ MAX          3
+   E          3
+ GME          2
+NVDA          2
+  TA          2
+   U          2
+  ML          2
+ USA          2
+  GM          2
+VRAR          1
+AMAT          1
+   W          1
+CROX          1
+ ALL          1
+   X          1
+ATVI          1
+TRUE          1
+ THC          1
+   Y          1
+ CAC          1
+  SI          1
+PLTR          1
+DIDI          1
+ HAS          1
+ NOG          1
+ NIO          1
+ NEW          1
+MSFT          1
+MRNA          1
+  ME          1
+   F          1
+  LC          1
+  FB          1
+   G          1
+INTC          1
+HOOD          1
+ YOU          1
+
+WSB Ticker Frequency from posts made in the last 24 hours: 03:44:50
+Term  Frequency
+  SP         21
+TSLA         16
+ SCI         11
+ AMC          9
+KNBE          7
+HIMX          6
+ AMD          5
+   D          5
+  DD          5
+AFRM          5
+AAPL          3
+ WTI          3
+VIAC          3
+ RSI          3
+   M          3
+ KSS          3
+ MAX          3
+   E          3
+ GME          2
+NVDA          2
+  TA          2
+   U          2
+  ML          2
+ USA          2
+  GM          2
+VRAR          1
+AMAT          1
+   W          1
+CROX          1
+ ALL          1
+   X          1
+ATVI          1
+TRUE          1
+ THC          1
+   Y          1
+ CAC          1
+  SI          1
+PLTR          1
+DIDI          1
+ HAS          1
+ NOG          1
+ NIO          1
+ NEW          1
+MSFT          1
+MRNA          1
+  ME          1
+   F          1
+  LC          1
+  FB          1
+   G          1
+INTC          1
+HOOD          1
+ YOU          1
+
+WSB Ticker Frequency from the newest 50 posts: 03:44:59
+Term  Frequency
+ SCI         11
+  SP         10
+ AMC          9
+TSLA          9
+HIMX          4
+ AMD          3
+VIAC          3
+ MAX          3
+ RSI          2
+  TA          2
+ WTI          2
+  DD          2
+   E          2
+  GM          2
+  ML          2
+   M          2
+AAPL          1
+TRUE          1
+PLTR          1
+   X          1
+ USA          1
+  ME          1
+NVDA          1
+ NOG          1
+MRNA          1
+ ALL          1
+HOOD          1
+ HAS          1
+ GME          1
+ CAC          1
+ATVI          1
+AMAT          1
+ YOU          1
+
+WSB Ticker Frequency from posts made in the last 24 hours: 03:45:08
+Term  Frequency
+  SP         21
+TSLA         16
+ SCI         11
+ AMC          9
+KNBE          7
+HIMX          6
+ AMD          5
+   D          5
+  DD          5
+AFRM          5
+AAPL          3
+ WTI          3
+VIAC          3
+ RSI          3
+   M          3
+ KSS          3
+ MAX          3
+   E          3
+ GME          2
+NVDA          2
+  TA          2
+   U          2
+  ML          2
+ USA          2
+  GM          2
+VRAR          1
+AMAT          1
+   W          1
+CROX          1
+ ALL          1
+   X          1
+ATVI          1
+TRUE          1
+ THC          1
+   Y          1
+ CAC          1
+  SI          1
+PLTR          1
+DIDI          1
+ HAS          1
+ NOG          1
+ NIO          1
+ NEW          1
+MSFT          1
+MRNA          1
+  ME          1
+   F          1
+  LC          1
+  FB          1
+   G          1
+INTC          1
+HOOD          1
+ YOU          1
+

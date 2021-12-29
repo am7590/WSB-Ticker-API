@@ -27,6 +27,26 @@ def hot_posts():
     return json_dump
 
 
+# New Posts GET call
+@app.route('/new/', methods=['GET'])
+def new_posts():
+    h_posts = scrape_new_posts(50, 'wallstreetbets')
+    data_set = {'Type of post': 'New', 'Content': h_posts, 'Timestamp': time.time()}
+    json_dump = json.dumps(data_set)
+
+    return json_dump
+
+
+# 24h Posts GET call
+@app.route('/24h/', methods=['GET'])
+def get_h_posts():
+    h_posts = scrape_24h_posts('wallstreetbets')
+    data_set = {'Type of post': 'New', 'Content': h_posts, 'Timestamp': time.time()}
+    json_dump = json.dumps(data_set)
+
+    return json_dump
+
+
 # Run API
 if __name__ == '__main__':
     app.run(port=7777)

@@ -29,6 +29,7 @@ def get_wsb_posts(posts_scraped, subreddit):
 
 # List of tickers (sorted by frequency)
 def list_tickers(ticker_df, word_df, posts_scraped):
+    string = ""
     stonks_df = pd.merge(ticker_df["Term"], word_df, on="Term")
     final_df = stonks_df.sort_values(by=['Frequency'], ascending=False)
     new_line = final_df.to_string(index=False)
@@ -36,13 +37,13 @@ def list_tickers(ticker_df, word_df, posts_scraped):
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
 
-    with open("output.txt", "a") as a_file:
-        a_file.write(f"WSB Ticker Frequency from posts made in the last 24 hours: {current_time}\n")
-        a_file.write(new_line)
-        a_file.write("\n\n")
+    string += str(new_line)
+    string += "\n\n"
+
+    return string
 
 
 def scrape_24h_posts(subreddit):
     df = get_wsb_posts(DEFAULT_24H_POSTS_SCRAPED, subreddit)
     [word_df, ticker_df] = analyze_word_frequency(df)
-    list_tickers(ticker_df, word_df, DEFAULT_24H_POSTS_SCRAPED)
+    return list_tickers(ticker_df, word_df, DEFAULT_24H_POSTS_SCRAPED)
