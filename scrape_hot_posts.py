@@ -1,0 +1,39 @@
+import utilities
+from utilities import *
+
+
+# Grab all WSB posts
+def get_wsb_posts(posts_scraped, subreddit):
+    df = []
+    for post in utilities.reddit.subreddit(subreddit).hot(limit=posts_scraped):
+        content = {
+            "title": post.title,
+            "text": post.selftext
+        }
+        df.append(content)
+    df = pd.DataFrame(df)
+
+    return df
+
+
+# List of tickers (sorted by frequency)
+def list_tickers(ticker_df, word_df, posts_scraped):
+    string = ""
+    stonks_df = pd.merge(ticker_df["Term"], word_df, on="Term")
+    final_df = stonks_df.sort_values(by=['Frequency'], ascending=False)
+    new_line = final_df.to_string(index=False)
+
+    now = datetime.now()
+    current_time = now.strftime("%H:%M:%S")
+
+    #with open("output.txt", "a") as a_file:
+    string += str(new_line)
+    string += "\n\n"
+
+    return string
+
+
+def scrape_hot_posts(posts_scraped, subreddit):
+    df = get_wsb_posts(posts_scraped, subreddit)
+    [word_df, ticker_df] = analyze_word_frequency(df)
+    return list_tickers(ticker_df, word_df, posts_scraped)
