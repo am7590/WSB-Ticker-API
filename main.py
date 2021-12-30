@@ -57,9 +57,7 @@ def get_h_posts():
 
 # Run API
 if __name__ == '__main__':
-    app.run(port=7777)
+    app.run(host='0.0.0.0', port=5000)
 
-# Run API on ngrok:
-# ngrok authtoken 22yexawyqxMn2soyjGN8WKJnW5C_5RYN7PvGcyPVuFMFbmzzx
-# ngrok http 7777
+
 
