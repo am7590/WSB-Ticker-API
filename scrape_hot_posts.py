@@ -27,7 +27,6 @@ def list_tickers(ticker_df, word_df, posts_scraped):
     current_time = now.strftime("%H:%M:%S")
 
     string += str(new_line)
-    string += "\n\n"
 
     return string
 
