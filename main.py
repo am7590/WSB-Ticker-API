@@ -59,5 +59,6 @@ def get_h_posts():
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
 
-
+# Link to AWS lightsail deployment tutorial:
+# https://aws.amazon.com/getting-started/hands-on/serve-a-flask-app/?trk=el_a134p000007C5T8AAK&trkCampaign=psc-2021-ec2_lightsail_flask&sc_channel=el&sc_campaign=ec2-lightsail-promo&sc_outcome=Enterprise_Digital_Marketing&sc_geo=NAMER
 

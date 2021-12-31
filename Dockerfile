@@ -1,5 +1,6 @@
+
 # Set base image (host OS)
-FROM python:3.10.1
+FROM --platform=linux/amd64 python:3.10.1
 # By default, listen on port 5000
 EXPOSE 5000/tcp
 
@@ -19,8 +20,6 @@ COPY utilities.py .
 COPY scrape_24h_posts.py .
 COPY scrape_hot_posts.py .
 COPY scrape_new_posts.py .
-
-
 
 # Specify the command to run on container start
 CMD [ "python3", "./main.py" ]
