@@ -1,4 +1,8 @@
 # WSB-Ticker-API
+WSB-Ticker-API analyzes the frequency of stock tickers being mentioned in WallStreetBets, and can be easily configured work on any subreddit. I built a REST API with Flask and Python and deployed it to AWS Lightsail using a Docker image.  
+
+Users can specify how many posts to analyze, and whether look for new or hot posts. You can also get data for all posts over the last 24 hours. Below are some examples:
+
 ## Fetch data:
 
 >Get frequency tables on the hottest 20 posts:
