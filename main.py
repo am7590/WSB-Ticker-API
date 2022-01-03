@@ -3,6 +3,7 @@ import json, time
 from scrape_hot_posts import *
 from scrape_24h_posts import *
 from scrape_new_posts import *
+from datetime import datetime
 
 app = Flask(__name__)
 
@@ -10,7 +11,10 @@ app = Flask(__name__)
 # Default GET
 @app.route('/', methods=['GET'])
 def home_page():
-    data_set = {'Type': 'None', 'Content': 'Loaded the WSB Ticker API', 'Timestamp': time.time()}
+    current_time = datetime.now()
+    hour_min_sec = "%s:%s.%s" % (current_time.hour, current_time.minute, str(current_time.second)[:2])
+
+    data_set = {'type': 'none', 'content': 'Loaded the WSB Ticker API', 'time_called': hour_min_sec}
     json_dump = json.dumps(data_set)
 
     return json_dump
@@ -20,11 +24,14 @@ def home_page():
 # Ex. Get 100 hottest posts: /hot/?hot=100/
 @app.route('/hot/', methods=['GET'])
 def hot_posts():
+    current_time = datetime.now()
+    hour_min_sec = "%s:%s.%s" % (current_time.hour, current_time.minute, str(current_time.second)[:2])
+
     user_query = int(request.args.get('hot'))
 
-    h_posts = scrape_hot_posts(user_query, 'wallstreetbets')
-    data_set = {'Type': 'Hot', 'Scraped': user_query, 'Content': h_posts,
-                'Timestamp': time.time()}
+    [h_posts, time_done] = scrape_hot_posts(user_query, 'wallstreetbets')
+    data_set = {'type': 'hot', 'posts': user_query, 'content': h_posts, 'time_called': hour_min_sec,
+                'time_compiled': time_done}
     json_dump = json.dumps(data_set)
 
     return json_dump
@@ -34,11 +41,14 @@ def hot_posts():
 # Ex. Get 100 newest posts: /new/?new=100/
 @app.route('/new/', methods=['GET'])
 def new_posts():
+    current_time = datetime.now()
+    hour_min_sec = "%s:%s.%s" % (current_time.hour, current_time.minute, str(current_time.second)[:2])
+
     user_query = int(request.args.get('new'))
 
-    h_posts = scrape_new_posts(user_query, 'wallstreetbets')
-    data_set = {'Type': 'New', 'Scraped': user_query, 'Content': h_posts,
-                'Timestamp': time.time()}
+    [h_posts, time_done] = scrape_new_posts(user_query, 'wallstreetbets')
+    data_set = {'type': 'new', 'posts': user_query, 'content': h_posts,
+                'time_called': hour_min_sec, 'time_compiled': time_done}
     json_dump = json.dumps(data_set)
 
     return json_dump
@@ -48,8 +58,11 @@ def new_posts():
 # Ex. See frequencies from last 24 hours: /24h/
 @app.route('/24h/', methods=['GET'])
 def get_h_posts():
-    h_posts = scrape_24h_posts('wallstreetbets')
-    data_set = {'Type': '24h', 'Content': h_posts, 'Timestamp': time.time()}
+    current_time = datetime.now()
+    hour_min_sec = "%s:%s.%s" % (current_time.hour, current_time.minute, str(current_time.second)[:2])
+
+    [h_posts, time_done] = scrape_24h_posts('wallstreetbets')
+    data_set = {'type': '24h', 'content': h_posts, 'time_called': hour_min_sec, 'time_compiled': time_done}
     json_dump = json.dumps(data_set)
 
     return json_dump
@@ -61,4 +74,3 @@ if __name__ == '__main__':
 
 # Link to AWS lightsail deployment tutorial:
 # https://aws.amazon.com/getting-started/hands-on/serve-a-flask-app/?trk=el_a134p000007C5T8AAK&trkCampaign=psc-2021-ec2_lightsail_flask&sc_channel=el&sc_campaign=ec2-lightsail-promo&sc_outcome=Enterprise_Digital_Marketing&sc_geo=NAMER
-

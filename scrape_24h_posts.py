@@ -43,7 +43,7 @@ def list_tickers(ticker_df, word_df, posts_scraped):
     current_time = now.strftime("%H:%M:%S")
     string += str(new_line)
 
-    return convert_val(string)
+    return [convert_val(string), current_time]
 
 
 def scrape_24h_posts(subreddit):

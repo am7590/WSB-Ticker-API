@@ -4,6 +4,7 @@ import praw
 import re
 from datetime import datetime
 
+
 WSB_POSTS_SCRAPED = 100
 
 # Step 1: Print a list of tickers

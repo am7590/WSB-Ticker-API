@@ -28,7 +28,7 @@ def list_tickers(ticker_df, word_df, posts_scraped):
 
     string += str(new_line)
 
-    return convert_val(string)
+    return [convert_val(string), current_time]
 
 
 def scrape_hot_posts(posts_scraped, subreddit):
