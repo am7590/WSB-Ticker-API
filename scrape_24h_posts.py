@@ -27,6 +27,11 @@ def get_wsb_posts(posts_scraped, subreddit):
     return df
 
 
+def parse_ticker_string(ticker_string):
+    for s in range(10, len(ticker_string)):
+        print(ticker_string[s])
+
+
 # List of tickers (sorted by frequency)
 def list_tickers(ticker_df, word_df, posts_scraped):
     string = ""
@@ -36,10 +41,9 @@ def list_tickers(ticker_df, word_df, posts_scraped):
 
     now = datetime.now()
     current_time = now.strftime("%H:%M:%S")
-
     string += str(new_line)
 
-    return string
+    return convert_val(string)
 
 
 def scrape_24h_posts(subreddit):

@@ -10,23 +10,22 @@ WSB_POSTS_SCRAPED = 100
 # Save tickers and company names ['ticker', 'name']
 ticker_list = []
 with open('tickers.csv', newline='') as csvfile:
-     spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
-     for row in spamreader:
-         ticker_list.append(row[0].split(","))
+    spamreader = csv.reader(csvfile, delimiter=' ', quotechar='|')
+    for row in spamreader:
+        ticker_list.append(row[0].split(","))
 
-#for obj in ticker_list:
-    # print(obj[0])  # Print ticker name
-    # print(obj[1])  # Print company name
-    # print(obj[0] + ": " + obj[1])  # Print company + ticker name
+# for obj in ticker_list:
+# print(obj[0])  # Print ticker name
+# print(obj[1])  # Print company name
+# print(obj[0] + ": " + obj[1])  # Print company + ticker name
 
 # Step 2: Create frequency list of tickers
 # Read data from reddit API
 reddit = praw.Reddit(
-  client_id = "qBibtPUZ69Gi1IUUGhQ87w",
-  client_secret = "8mzMqF5BRRa1kEWR9FqpJzhN1-WvBA",
-  user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
+    client_id="qBibtPUZ69Gi1IUUGhQ87w",
+    client_secret="8mzMqF5BRRa1kEWR9FqpJzhN1-WvBA",
+    user_agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36"
 )
-
 
 
 # Analyze word frequency
@@ -59,3 +58,17 @@ def analyze_word_frequency(df):
     return [word_df, ticker_df]
 
 
+# Converts string output to a dict
+def convert_str_to_dict(string):
+    it = iter(string)
+    return dict(zip(it, it))
+
+
+# Converts value in the dict from a string to an int
+def convert_val(passed_dict):
+    str_dict = [convert_str_to_dict(passed_dict[16::].split())]
+    # print(str_dict)
+    for val in str_dict:
+        for key in val:
+            val[key] = int(val[key].strip())
+    return str_dict
