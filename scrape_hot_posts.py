@@ -17,7 +17,7 @@ def get_wsb_posts(posts_scraped, subreddit):
 
 
 # List of tickers (sorted by frequency)
-def list_tickers(ticker_df, word_df, posts_scraped):
+def list_tickers(ticker_df, word_df):
     string = ""
     stonks_df = pd.merge(ticker_df["Term"], word_df, on="Term")
     final_df = stonks_df.sort_values(by=['Frequency'], ascending=False)

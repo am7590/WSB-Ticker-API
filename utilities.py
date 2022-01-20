@@ -2,6 +2,7 @@ import csv
 import pandas as pd
 import praw
 import re
+from flask import jsonify
 from datetime import datetime
 
 
@@ -46,7 +47,7 @@ def analyze_word_frequency(df):
         # combine
         words = title_words + content_words
         for x in words:
-            if x in ['A', 'B', 'GO', 'ARE', 'ON']:
+            if x in ['A', 'B', 'GO', 'ARE', 'ON', 'DD']:
                 pass
 
             elif x in word_dict:
@@ -68,8 +69,6 @@ def convert_str_to_dict(string):
 # Converts value in the dict from a string to an int
 def convert_val(passed_dict):
     str_dict = [convert_str_to_dict(passed_dict[16::].split())]
-    # print(str_dict)
-    for val in str_dict:
-        for key in val:
-            val[key] = int(val[key].strip())
+    jsonify(str_dict)
+
     return str_dict

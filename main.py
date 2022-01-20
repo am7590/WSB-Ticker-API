@@ -1,7 +1,8 @@
 from flask import *
 import json, time
+
+from scrape_any_posts import *
 from scrape_hot_posts import *
-from scrape_24h_posts import *
 from scrape_new_posts import *
 from datetime import datetime
 
@@ -56,13 +57,17 @@ def new_posts():
 
 # 24h Posts GET
 # Ex. See frequencies from last 24 hours: /24h/
-@app.route('/24h/', methods=['GET'])
+@app.route('/subreddit/', methods=['GET'])
 def get_h_posts():
     current_time = datetime.now()
     hour_min_sec = "%s:%s.%s" % (current_time.hour, current_time.minute, str(current_time.second)[:2])
 
-    [h_posts, time_done] = scrape_24h_posts('wallstreetbets')
-    data_set = {'type': '24h', 'content': h_posts, 'time_called': hour_min_sec, 'time_compiled': time_done}
+    user_query = request.args.get('subreddit')
+
+    # [h_posts, time_done] = scrape_24h_posts(user_query)
+    [h_posts, time_done] = scrape_any_hour_posts(user_query, 1)
+
+    data_set = {'type': 'custom', 'content': h_posts, 'time_called': hour_min_sec, 'time_compiled': time_done}
     json_dump = json.dumps(data_set)
 
     return json_dump
