@@ -23,7 +23,7 @@ def home_page():
 
 # Hot Posts GET
 # Ex. Get 100 hottest posts: /hot/?hot=100/
-@app.route('/hot/', methods=['GET'])
+@app.route('/get/hot/', methods=['GET'])
 def hot_posts():
     current_time = datetime.now()
     hour_min_sec = "%s:%s.%s" % (current_time.hour, current_time.minute, str(current_time.second)[:2])
@@ -40,7 +40,7 @@ def hot_posts():
 
 # New Posts GET
 # Ex. Get 100 newest posts: /new/?new=100/
-@app.route('/new/', methods=['GET'])
+@app.route('/get/new/', methods=['GET'])
 def new_posts():
     current_time = datetime.now()
     hour_min_sec = "%s:%s.%s" % (current_time.hour, current_time.minute, str(current_time.second)[:2])
@@ -55,17 +55,18 @@ def new_posts():
     return json_dump
 
 
-# 24h Posts GET
-# Ex. See frequencies from last 24 hours: /24h/
-@app.route('/subreddit/', methods=['GET'])
+# Any subreddit GET
+# Ex. See frequencies from last 24 hours: /get/subreddit-hour/?subreddit=wallstreetbets&hours=24
+@app.route('/get/subreddit-hour/', methods=['GET'])
 def get_h_posts():
     current_time = datetime.now()
     hour_min_sec = "%s:%s.%s" % (current_time.hour, current_time.minute, str(current_time.second)[:2])
 
-    user_query = request.args.get('subreddit')
+    user_subreddit = request.args.get('subreddit', None)
+    user_hours = int(request.args.get('hours', None))
 
     # [h_posts, time_done] = scrape_24h_posts(user_query)
-    [h_posts, time_done] = scrape_any_hour_posts(user_query, 1)
+    [h_posts, time_done] = scrape_any_hour_posts(user_subreddit, user_hours)
 
     data_set = {'type': 'custom', 'content': h_posts, 'time_called': hour_min_sec, 'time_compiled': time_done}
     json_dump = json.dumps(data_set)

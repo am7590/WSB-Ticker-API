@@ -34,4 +34,4 @@ def list_tickers(ticker_df, word_df):
 def scrape_hot_posts(posts_scraped, subreddit):
     df = get_wsb_posts(posts_scraped, subreddit)
     [word_df, ticker_df] = analyze_word_frequency(df)
-    return list_tickers(ticker_df, word_df, posts_scraped)
+    return list_tickers(ticker_df, word_df)
