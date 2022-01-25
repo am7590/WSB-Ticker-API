@@ -22,15 +22,16 @@ def home_page():
 
 
 # Hot Posts GET
-# Ex. Get 100 hottest posts: /hot/?hot=100/
-@app.route('/get/hot/', methods=['GET'])
+# Ex. Get 100 hottest posts: /hot/?subreddit=wallstreetbets&hot=100
+@app.route('/hot/', methods=['GET'])
 def hot_posts():
     current_time = datetime.now()
     hour_min_sec = "%s:%s.%s" % (current_time.hour, current_time.minute, str(current_time.second)[:2])
 
+    user_subreddit = request.args.get('subreddit', None)
     user_query = int(request.args.get('hot'))
 
-    [h_posts, time_done] = scrape_hot_posts(user_query, 'wallstreetbets')
+    [h_posts, time_done] = scrape_hot_posts(user_query, user_subreddit)
     data_set = {'type': 'hot', 'posts': user_query, 'content': h_posts, 'time_called': hour_min_sec,
                 'time_compiled': time_done}
     json_dump = json.dumps(data_set)
@@ -39,15 +40,16 @@ def hot_posts():
 
 
 # New Posts GET
-# Ex. Get 100 newest posts: /new/?new=100/
-@app.route('/get/new/', methods=['GET'])
+# Ex. Get 100 newest posts: /new/?subreddit=wallstreetbets&new=100
+@app.route('/new/', methods=['GET'])
 def new_posts():
     current_time = datetime.now()
     hour_min_sec = "%s:%s.%s" % (current_time.hour, current_time.minute, str(current_time.second)[:2])
 
+    user_subreddit = request.args.get('subreddit', None)
     user_query = int(request.args.get('new'))
 
-    [h_posts, time_done] = scrape_new_posts(user_query, 'wallstreetbets')
+    [h_posts, time_done] = scrape_new_posts(user_query, user_subreddit)
     data_set = {'type': 'new', 'posts': user_query, 'content': h_posts,
                 'time_called': hour_min_sec, 'time_compiled': time_done}
     json_dump = json.dumps(data_set)
@@ -55,9 +57,10 @@ def new_posts():
     return json_dump
 
 
-# Any subreddit GET
-# Ex. See frequencies from last 24 hours: /get/subreddit-hour/?subreddit=wallstreetbets&hours=24
-@app.route('/get/subreddit-hour/', methods=['GET'])
+# Any subreddit/hour GET
+# Ex. See frequencies from last 24 hours from wallstreetbets: /subreddit-hour/?subreddit=wallstreetbets&hours=24
+# Works for any subreddit and any integer hour
+@app.route('/subreddit-hour/', methods=['GET'])
 def get_h_posts():
     current_time = datetime.now()
     hour_min_sec = "%s:%s.%s" % (current_time.hour, current_time.minute, str(current_time.second)[:2])
