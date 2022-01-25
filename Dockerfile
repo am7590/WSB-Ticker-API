@@ -17,7 +17,7 @@ RUN pip3 install -r requirements.txt
 COPY tickers.csv .
 COPY main.py .
 COPY utilities.py .
-COPY scrape_24h_posts.py .
+COPY scrape_any_posts.py .
 COPY scrape_hot_posts.py .
 COPY scrape_new_posts.py .
 
