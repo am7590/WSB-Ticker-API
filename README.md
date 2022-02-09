@@ -12,9 +12,13 @@ https://flask-service.bg7bq3bnlj1de.us-east-1.cs.amazonlightsail.com/hot/?subred
 https://flask-service.bg7bq3bnlj1de.us-east-1.cs.amazonlightsail.com/new/?subreddit=pennystocks&new=50
 
 >Get frequency tables from posts in the last 24 hours from r/Stocks:
-Fetch frequency tables on the hottest 20 posts:
 https://flask-service.bg7bq3bnlj1de.us-east-1.cs.amazonlightsail.com/subreddit-hour/?subreddit=stocks&hours=24
 
 
 ## TODO:
 - [ ] Return subreddit in API call
+- [ ] Parse tickers with a $ in front of them
+- [ ] Parse company names and count them as ticker frequency values
+- [ ] Parse "call" and "put" from posts with tickers in them
+- [ ] Read sentiment from all posts analyzed 
+- [ ] Update ticker csv and add more indexes/etf's
