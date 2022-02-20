@@ -1,4 +1,5 @@
 from flask import *
+from flask_cors import CORS
 import json, time
 
 from scrape_any_posts import *
@@ -7,6 +8,7 @@ from scrape_new_posts import *
 from datetime import datetime
 
 app = Flask(__name__)
+CORS(app)
 
 
 # Default GET
